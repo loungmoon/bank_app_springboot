@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Bank Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+    <h1>Bank Management System</h1>
+    <hr>
+    <h2>Save Bank Account</h2>
+
+    <form action="#" th:action="@{/saveAccount}" th:object="${bankAccount}" method="POST">
+        <input type="number" th:field="*{accountNo}" placeholder="Enter Account No" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{accountHolder}" placeholder="Enter Account Holder" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{accountType}" placeholder="Enter Account Type" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{balance}" placeholder="Enter Balance" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Save Account</button>
+    </form>
+
+    <hr>
+
+    <a th:href="@{/home?accountId=0}"> Back to Bank Account List</a>
+</div>
+</body>
+
+</html>
