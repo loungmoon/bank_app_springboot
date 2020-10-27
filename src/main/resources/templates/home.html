@@ -23,7 +23,7 @@
     </td>
     <td>
     <form class="form-inline" th:action="@{/search}" th:object="${account}" method="POST">
-                <input type="number" th:field="*{id}" placeholder="Enter Bank Id" class="form-control mb-4 col-4">
+                <input type="number" th:field="*{id}" placeholder="Enter Bank Id" class="form-control mb-4 col-4" required>
                 <button type="submit" class="btn btn-info col-2" >Search</button>
     </form>
     </td>

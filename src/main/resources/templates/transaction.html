@@ -15,14 +15,14 @@
     <table  class="table table-striped ">
         <tr>
             <td>
-                <input type="date" th:field="*{transactionDate}" placeholder="Enter Date" class="form-control mb-4 col-4">
+                <input type="date" th:field="*{transactionDate}" placeholder="Enter Date" class="form-control mb-4 col-4" >
                 <button type="submit" class="btn btn-info col-2" name="date">Search By Date</button>
             </td>
         </tr>
         <tr>
             <td>
-                <input type="date" th:field="*{strStartDate}" placeholder="Enter Start Date" class="form-control mb-4 col-4">
-                <input type="date" th:field="*{strEndDate}" placeholder="Enter End Date" class="form-control mb-4 col-4">
+                <input type="date" th:field="*{strStartDate}" placeholder="Enter Start Date" class="form-control mb-4 col-4" required>
+                <input type="date" th:field="*{strEndDate}" placeholder="Enter End Date" class="form-control mb-4 col-4" required>
                 <button type="submit" class="btn btn-info col-2" name="betweendate"> Search By Date Range</button>
             </td>
         </tr>
