@@ -21,8 +21,8 @@
         </tr>
         <tr>
             <td>
-                <input type="date" th:field="*{strStartDate}" placeholder="Enter Start Date" class="form-control mb-4 col-4" required>
-                <input type="date" th:field="*{strEndDate}" placeholder="Enter End Date" class="form-control mb-4 col-4" required>
+                <input type="date" th:field="*{strStartDate}" placeholder="Enter Start Date" class="form-control mb-4 col-4" >
+                <input type="date" th:field="*{strEndDate}" placeholder="Enter End Date" class="form-control mb-4 col-4" >
                 <button type="submit" class="btn btn-info col-2" name="betweendate"> Search By Date Range</button>
             </td>
         </tr>
@@ -44,7 +44,7 @@
         <tbody>
         <tr th:each="transaction : ${transactionList}">
             <td th:text="${transaction.id}"></td>
-<!--            <td th:text="${transaction.transactionDate}"></td>-->
+            <!--<td th:text="${transaction.transactionDate}"></td>-->
             <td th:text="${#dates.format(transaction.transactionDate, 'yyyy-MM-dd')}"></td>
             <td th:text="${transaction.amount}"></td>
             <td th:text="${transaction.transactionType}"></td>
