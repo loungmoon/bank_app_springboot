@@ -24,7 +24,8 @@ public class BankServiceImpl implements BankService {
     @Autowired
     private TransactionReposity transactionReposity;
 
-    public void saveTransaction(double amount, String transactionType, BankAccount bank) {
+    public Transaction saveTransaction(double amount, String transactionType, BankAccount bank) {
+        Transaction transaction1=null;
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String date = dateFormat.format(new Date());
@@ -33,11 +34,11 @@ public class BankServiceImpl implements BankService {
             transaction.setTransactionDate(dateFormat.parse(date));
             transaction.setTransactionType(transactionType);
             transaction.setBankAccount(bank);
-            transactionReposity.save(transaction);
+            transaction1 =transactionReposity.save(transaction);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        return transaction1;
     }
 
     @Override
@@ -97,8 +98,8 @@ public class BankServiceImpl implements BankService {
     }
 
     @Override
-    public void deposit(BankAccount account, double amount) {
-        saveTransaction(amount, "DEPOSIT", account);
+    public Transaction deposit(BankAccount account, double amount) {
+       return saveTransaction(amount, "DEPOSIT", account);
     }
 
     @Override

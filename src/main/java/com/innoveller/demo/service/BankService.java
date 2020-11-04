@@ -15,7 +15,9 @@ public interface BankService {
 
     BankAccount findAccountById(Long bank_account_id);
 
-    void deposit(BankAccount account, double amount);
+    Transaction deposit(BankAccount account, double amount);
+
+    double calculatedTotalBalance(Long bank_account_id);
 
     void withdraw(BankAccount account, double amount);
 
